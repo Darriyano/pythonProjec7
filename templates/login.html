@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3 align="center">{{title}}</h3>
+<table>
+    <tr>
+        <th width="550">Цвет каюты</th>
+        <th width="550">Эмблема</th>
+    </tr>
+    <tr>
+        {% if s == "female" and a < 21 %}
+        <td width="550" height="650" bgcolor="#F08080"></td>
+        <td width="550" height="650"><img src="/static/image/baby_alien.jpg" width="550" height="650"></td>
+        {% elif s == "female" and a >= 21%}
+        <td width="550" height="650" bgcolor="#DC143C"></td>
+        <td width="550" height="650"><img src="/static/image/adult_alien.jpeg" width="550" height="650"></td>
+
+        {% elif s == "male" and a < 21 %}
+        <td width="550" height="650" bgcolor="#87CEFA"></td>
+        <td width="550" height="650"><img src="/static\image\baby_alien.jpg" width="550" height="650"></td>
+        {% else%}
+        <td width="550" height="650" bgcolor="#4169E1"></td>
+        <td width="550" height="650"><img src="/static/image/adult_alien.jpeg" width="550" height="650"></td>
+        {% endif %}
+    </tr>
+</table>
+{% endblock %}
